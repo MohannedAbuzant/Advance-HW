@@ -111,39 +111,38 @@ public class DataStandardizer {
 			// The rest is the data
 		    StringBuffer buffer = new StringBuffer();
 		    String line = null;
-		    if (company.compareTo("google")==0)
-		    {
+		   
 		    while ((line = reader.readLine()) != null) {
-		    	
+		    	 if (company.compareTo("google")==0)
+		    {
 		     Company Google = new Google();
                     Google.p.parse(line,buffer);
 		    	
-		    	buffer.append("\n");
+		    
 		    }
-		    }
+		    
 		   else if (company.compareTo("microsoft")==0)
 		    {
-		    	 while ((line = reader.readLine()) != null) {
+		    	
 		    	
 		     Company Microsoft = new Microsoft();
                       Microsoft.p.parse(line,buffer);
 		    	
-		    	buffer.append("\n");
-		    }
+		    	
 		    }
                      else   if (company.compareTo("amazon")==0)
 		    {
-		    	 while ((line = reader.readLine()) != null) {
+		    
 		    	
 		     Company Aws = new AWS();
                     Aws.p.parse(line,buffer);
 		    	
-		    	buffer.append("\n");
-		    }
+		    	
+		    
 		    }
                     
-		  
-		    
+		  buffer.append("\n");
+                    }
 		    // Done unifying the data
 		    this.data = buffer.toString();
 		} catch (IOException x) {
